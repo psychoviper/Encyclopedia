@@ -1,13 +1,13 @@
 {
-  'version': 2,
-  'builds':[
+  "version": 2,
+  "builds":[
     {
-      'src':'wiki/wsgi.py',
+      "src":'wiki/wsgi.py',
       'use':'@vercel/python',
       'config':{'maxlambdaSize':"150mb",'runtime':"python3.9"}
     },
     {
-      'src':'build_files.sh',
+      "src":'build_files.sh',
       'use':'@vercel/static.build',
       'config':{'distDir':"staticfiles_build"
                }
@@ -15,11 +15,11 @@
    ],
    "routes":[
      {
-       'src':"/static/(.*)",
+       "src":"/static/(.*)",
        'dest':"/static/$1"
      },
      {
-       'src':"/(.*)",
+       "src":"/(.*)",
        'dest':'wiki/wsgi.py'
      }
      ]
